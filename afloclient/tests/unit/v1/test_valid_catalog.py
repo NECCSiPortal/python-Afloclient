@@ -10,6 +10,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 #
+#
 
 """Test afloclient/v1/valid_catalog.py."""
 

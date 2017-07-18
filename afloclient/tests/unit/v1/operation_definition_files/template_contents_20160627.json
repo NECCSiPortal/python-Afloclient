@@ -1,0 +1,87 @@
+{
+    "action": {
+        "broker": [
+            {
+                "broker_method": "action",
+                "status": "applied1",
+                "timing": "after"
+            },
+            {
+                "broker_method": "action",
+                "status": "applied2",
+                "timing": "before",
+                "validation": "param_check"
+            }
+        ],
+        "broker_class": "aflo.tickets.broker.sample_broker.SampleBroker"
+    },
+    "application_kinds_name": {
+        "Default": "\\u3042\"'<>%\\",
+        "ja": "application_kinds_1(ja)"
+    },
+    "first_status_code": "approved",
+    "create": {
+        "parameters": [
+            {
+                "key": "num",
+                "type": "number",
+                "label": {
+                    "default": "num",
+                    "ja": "num"
+                },
+                "default": "",
+                "constraints": {
+                    "required": true,
+                    "range": {
+                        "max": 999,
+                        "min": 1
+                    }
+                }
+            },
+            {
+                "key": "description",
+                "type": "string",
+                "label": {
+                    "default": "description",
+                    "ja": "description"
+                },
+                "constraints": {
+                    "length": {
+                        "max": 128,
+                        "min": 0
+                    }
+                }
+            }
+        ],
+        "custom": ""
+    },
+    "update": {
+        "parameters": [
+            {
+                "key": "description",
+                "type": "string",
+                "label": {
+                    "default": "description",
+                    "ja": "description"
+                },
+                "constraints": {
+                    "length": {
+                        "max": 128,
+                        "min": 0
+                    }
+                }
+            }
+        ],
+        "custom": ""
+    },
+    "target_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx1",
+    "target_key": ["num"],
+    "price_notice": ["*Monthly fee", "*Tax excluded"],
+    "ticket_template_version": "2016-06-27",
+    "ticket_template_name": {
+        "Default": "flat-rate *root:one",
+        "ja": "flat-rate(ja) *root:one"
+    },
+    "ticket_type": "request",
+    "wf_pattern_code": "one_approver"
+}

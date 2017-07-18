@@ -1,0 +1,73 @@
+{
+    "ticket_template_version": "2016-06-27",
+    "action": {
+        "broker": [],
+        "broker_class": "aflo.tickets.broker.sample_broker.SampleBroker"
+    },
+    "application_kinds_name": {
+        "Default": "application_kinds_3",
+        "ja": "application_kinds_3(ja)"
+    },
+    "first_status_code": "applied",
+    "create": {
+        "parameters": [
+            {
+                "key": "num",
+                "type": "number",
+                "label": {
+                    "default": "num",
+                    "ja": "num"
+                },
+                "default": "",
+                "constraints": {
+                    "required": true,
+                    "range": {
+                        "max": 999,
+                        "min": 1
+                    }
+                }
+            },
+            {
+                "key": "description",
+                "type": "string",
+                "label": {
+                    "default": "description",
+                    "ja": "description"
+                },
+                "constraints": {
+                    "length": {
+                        "max": 128,
+                        "min": 0
+                    }
+                }
+            }
+        ],
+        "custom": ""
+    },
+    "update": {
+        "parameters": [
+            {
+                "key": "description",
+                "type": "string",
+                "label": {
+                    "default": "description",
+                    "ja": "description"
+                },
+                "constraints": {
+                    "length": {
+                        "max": 128,
+                        "min": 0
+                    }
+                }
+            }
+        ],
+        "custom": ""
+    },
+    "target_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx2",
+    "ticket_template_name": {
+        "Default": "flat-rate-2 *root:three",
+        "ja": "flat-rate-2(ja) *root:three"
+    },
+    "ticket_type": "New Contract",
+    "wf_pattern_code": "003"
+}

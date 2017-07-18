@@ -1,0 +1,25 @@
+_aflo_opts="" # lazy init
+_aflo_flags="" # lazy init
+_aflo_opts_exp="" # lazy init
+_aflo()
+{
+    local cur prev nbc cflags
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    if [ "x$_aflo_opts" == "x" ] ; then
+        nbc="`aflo bash-completion | sed -e "s/  *-h  */ /" -e "s/  *-i  */ /"`"
+        _aflo_opts="`echo "$nbc" | sed -e "s/--[a-z0-9_-]*//g" -e "s/  */ /g"`"
+        _aflo_flags="`echo " $nbc" | sed -e "s/ [^-][^-][a-z0-9_-]*//g" -e "s/  */ /g"`"
+        _aflo_opts_exp="`echo "$_aflo_opts" | sed 's/^ *//' | tr ' ' '|'`"
+    fi
+
+    if [[ " ${COMP_WORDS[@]} " =~ " "($_aflo_opts_exp)" " && "$prev" != "help" ]] ; then
+        COMPREPLY=($(compgen -W "${_aflo_flags}" -- ${cur}))
+    else
+        COMPREPLY=($(compgen -W "${_aflo_opts}" -- ${cur}))
+    fi
+    return 0
+}
+complete -F _aflo aflo

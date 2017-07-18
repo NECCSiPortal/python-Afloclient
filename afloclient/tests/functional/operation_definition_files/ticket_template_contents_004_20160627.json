@@ -1,0 +1,24 @@
+{
+    "ticket_template_version": "2016-06-27",
+    "action": {
+        "broker": [],
+        "broker_class": "aflo.tickets.broker.sample_broker.SampleBroker"
+    },
+    "application_kinds_name": {
+        "Default": "application_kinds_2",
+        "ja": "application_kinds_2(ja)"
+    },
+    "first_status_code": "applied",
+    "create": {
+        "parameters": []
+    },
+    "update": {
+        "parameters": []
+    },
+    "ticket_template_name": {
+        "Default": "flat-rate-4 *root:three",
+        "ja": "flat-rate-4(ja) *root:three"
+    },
+    "ticket_type": "New Contract",
+    "wf_pattern_code": "004"
+}

@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = afloclient
+omit = afloclient/openstack/*,afloclient/tests/*,afloclient/config.py,afloclient/common/*
+
+[report]
+#ignore-errors = True
